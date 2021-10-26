@@ -17,6 +17,11 @@
         <div class="card text-center mt-4 mb-4">
           <div class="card-body">
             Добро пожаловать в Instatalk, <b><%= current_user.nickname %></b>!
+            <hr>
+            <ul id="user-list" class="mt-4 list-unstyled">
+              Now online
+              <%= render partial: 'users/user', collection: @users %>
+            </ul>
           </div>
         </div>
 

@@ -2,8 +2,9 @@
 
 <%= link_to "Выйти", root_path, class: 'button btn btn-primary' %>
 
-
+<% if current_user == @room.user %>
   <%= link_to 'Удалить комнату', room_path(@room.token), class: 'button btn btn-danger', method: :delete, data: { confirm: 'Вы уверены, что хотите удалить комнату?' } %>
+<% end %>
 
 <p id="notice"><%= notice %></p>
 <div class="messages">
