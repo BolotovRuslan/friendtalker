@@ -8,7 +8,7 @@ environment.
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
-      Popper: ['popperjs/core', 'default']
+      Popper: ['popper.js', 'default']
     })
   )
 

@@ -1,1 +1,1 @@
-<li><b>Room #<%= room.id %></b> — <%= link_to 'Войти', room %></li>
+<li><b>Room #<%= room.id %></b> — <%= link_to 'Войти', room_path(room.token), class: 'button btn btn-primary' %></li>

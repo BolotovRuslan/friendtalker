@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_23_091907) do
+ActiveRecord::Schema.define(version: 2021_10_25_160531) do
 
   create_table "messages", force: :cascade do |t|
     t.text "body"
@@ -26,14 +26,18 @@ ActiveRecord::Schema.define(version: 2021_10_23_091907) do
     t.string "token"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_rooms_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "nickname"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "status", default: false, null: false
   end
 
   add_foreign_key "messages", "rooms"
   add_foreign_key "messages", "users"
+  add_foreign_key "rooms", "users"
 end

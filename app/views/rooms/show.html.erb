@@ -1,9 +1,11 @@
 <h1>Room <%= @room.id %></h1>
 
-<%= link_to "Выйти", root_path %>
+<%= link_to "Выйти", root_path, class: 'button btn btn-primary' %>
+
+
+  <%= link_to 'Удалить комнату', room_path(@room.token), class: 'button btn btn-danger', method: :delete, data: { confirm: 'Вы уверены, что хотите удалить комнату?' } %>
 
 <p id="notice"><%= notice %></p>
-
 <div class="messages">
   <div class="messages-inner" id="messages" data-room-id="<%= @room.id %>">
     <%= render @room.messages %>
